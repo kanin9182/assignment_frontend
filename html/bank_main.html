@@ -199,7 +199,7 @@
 			axios.get('http://127.0.0.1:8081/api/profile', { withCredentials: true })
 				.then(response => {
 					if (response.status === 200) {
-						console.log('User is authenticated:', response.data.user_id);
+						//console.log('User is authenticated:', response.data.user_id);
 
 						return axios.get('http://127.0.0.1:8081/api/main', { withCredentials: true });
 					} else {
@@ -208,7 +208,7 @@
 					}
 				})
 				.then(mainResponse => {
-					console.log('Main API response:', mainResponse.data);
+					//console.log('Main API response:', mainResponse.data);
 
 					document.getElementById('main-content').style.display = 'block';
 					document.getElementById('greetingName').textContent = mainResponse.data.greeting_and_banner.greeting;
@@ -225,7 +225,7 @@
 					if (error.response && (error.response.status === 401 || error.response.status === 403)) {
 						window.location.href = 'pin.html';
 					} else {
-						console.error('Error:', error);
+						//console.error('Error:', error);
 					}
 				})
 				.finally(() => {
@@ -235,14 +235,14 @@
 
 		function renderDebitCards(data) {
 			const cards = data.debit_card_info;
-			console.log('List cards: ', cards)
+			//console.log('List cards: ', cards)
 			const container = document.querySelector('.debit-swipe__lst');
 			if (!container || !Array.isArray(cards)) return;
 
 			container.innerHTML = ''; 
 
 			cards.forEach(card => {
-				console.log('Card data: ', card)
+				//console.log('Card data: ', card)
 				const a = document.createElement('a');
 				a.href = '#';
 				a.className = 'debit-swipe__item';
@@ -275,7 +275,7 @@
 			mainAccountContainer.innerHTML = '';
 
 			data.account_info.forEach((account, index) => {
-				console.log('Account number: ', account.account_number)
+				//console.log('Account number: ', account.account_number)
 				if (account.is_main_account) {
 					renderMainAccount(account, mainAccountContainer);
 				} else {
@@ -410,7 +410,6 @@
 					window.location.href = 'pin.html';
 				})
 				.catch((error) => {
-					console.error('Logout failed:', error);
 
 					window.location.href = 'pin.html';
 				});
