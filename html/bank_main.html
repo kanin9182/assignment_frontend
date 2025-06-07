@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Bank Main Screen</title>
 	<meta charset="utf-8">
@@ -9,23 +10,32 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="../css/th-bank.css">
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<style>
+	#main-content {
+		display: none;
+	}
+</style>
+
 <body>
 	<div class="wrap">
 
 		<header class="header ">
 			<a href="#" class="header__lft header__menu"><span class="blind">Menu</span></a>
-			<button type="button" class="header__rgt header__cxl" onclick="logout()"><span class="blind">Cancel</span></button>
+			<button type="button" class="header__rgt header__cxl" onclick="logout()"><span
+					class="blind">Cancel</span></button>
 		</header>
 
 		<!-- container -->
-		<main class="container container--main">
+		<main id="main-content" class="container container--main">
 			<div class="content_wrap">
 				<div class="main-top">
-					<h1 class="main-top__tit main-loading main-loading--order1">Have a nice day Clare</h1>
+					<h1 id="greetingName" class="main-top__tit main-loading main-loading--order1">Have a nice day Clare
+					</h1>
 				</div>
 
-				<div class="main-acc main-acc--large main-loading main-loading--order3">
+				<div id="main-account-container" class="main-acc main-acc--large main-loading main-loading--order3">
 					<div class="main-acc__top">
 						<h2 class="main-acc__name">Saving Account</h2>
 						<span class="main-acc__amount">฿62,000.00</span>
@@ -112,7 +122,7 @@
 								<span class="rctly__name">MarkYu Gonzales</span>
 							</a>
 						</li>
-						
+
 					</ul>
 				</div>
 				<a class="main-make main-loading main-loading--order6" style="display:none;">
@@ -120,35 +130,13 @@
 					<strong class="main-make__tit">Make your Debit Card</strong>
 					<p class="main-make__dsc">To enjoy 0.5% cash back from online perchase.</p>
 				</a>
-				<div class="debit-swipe__wrap main-loading main-loading--order6">
+				<div id="debit-card-wrapper-id" class="debit-swipe__wrap main-loading main-loading--order6">
 					<div class="debit-swipe__inner">
 						<div class="debit-swipe__lst" style="width:1595px;">
 							<a href="#" class="debit-swipe__item" style="background-color:#00a1e2">
 								<strong class="debit-swipe__name">My Salary</strong>
 								<span class="debit-swipe__etc">In progress</span>
-								<span class="debit-swipe__issue">Issued by TestLab</span>
-							</a>
-							<a href="#" class="debit-swipe__item" style="background-color:#ff8300">
-								<strong class="debit-swipe__name">For My Dream</strong>
-								<span class="debit-swipe__etc">In progress</span>
-								<span class="debit-swipe__issue">Issued by TestLab</span>
-							</a>
-							<a href="#" class="debit-swipe__item"
-								style="color:#97999e;background-color:#ffffff;--border-color:#f2f3f7">
-								<strong class="debit-swipe__name">For My Dream</strong>
-								<span class="debit-swipe__etc debit-swipe__etc--active">
-									<span class="debit-swipe__etc__num">9440 78&#8226;&#8226;
-										&#8226;&#8226;&#8226;&#8226; 3115</span>
-								</span>
-								<span class="debit-swipe__issue" style="color:#d3d3d2">Issued by TestLab</span>
-							</a>
-							<a href="#" class="debit-swipe__item" style="background-color:#91c9ee">
-								<strong class="debit-swipe__name">For My Dream</strong>
-								<span class="debit-swipe__etc debit-swipe__etc--active">
-									<span class="debit-swipe__etc__num">9440 78&#8226;&#8226;
-										&#8226;&#8226;&#8226;&#8226; 3115</span>
-								</span>
-								<span class="debit-swipe__issue">Issued by TestLab</span>
+								<span class="debit-swipe__issue">Mock Issued by TestLab</span>
 							</a>
 
 							<a href="#" class="debit-swipe__item debit-swipe__item--all">
@@ -158,10 +146,12 @@
 					</div>
 				</div>
 
-				<div class="main-acc is-bluegreen is-small">
+				<div id="other-accounts" class="main-acc is-bluegreen is-small">
 					<div class="main-acc__top">
 						<h2 class="main-acc__name">Saving Account</h2>
 						<span class="main-acc__amount">฿8,837,999.00</span>
+						<span class="main-acc__flag main-acc__flag--lock">Disbursement</span>
+						<span class="main-acc__flag">Overdue</span>
 					</div>
 					<div class="main-acc__bottom">
 						<span class="main-acc__detail">Smart account 568-2-81740-9</span>
@@ -179,88 +169,11 @@
 					</a>
 				</div>
 
-				<div class="main-acc is-orange is-small">
-					<div class="main-acc__top">
-						<h2 class="main-acc__name">Credit Loan</h2>
-						<span class="main-acc__amount">฿300.100</span>
-					</div>
-					<div class="main-acc__bottom">
-						<span class="main-acc__detail">Credit Loan 568-2-81740-9</span>
-					</div>
-					<button type="button" class="main-acc__more main-acc__more--small">
-						<span class="blind">More Action</span>
-					</button>
-					<div class="tooltip tooltip--sub-acc" style="display: none">
 
-						<button type="button" class="tooltip__btn-more">Copy account number</button>
-
-						<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
-					</div>
-					<a href="#" class="main-acc__act main-acc__act--disburse">
-						<span class="blind">Disburse</span>
-					</a>
-				</div>
-
-				<div class="main-acc is-purple is-small">
-					<div class="main-acc__top">
-						<h2 class="main-acc__name">Travel New York</h2>
-						<span class="main-acc__amount">฿30,000.00</span>
-					</div>
-					<div class="main-acc__bottom">
-						<span class="main-acc__detail">Goal driven savings 568-2-81740-9</span>
-						<span class="main-acc__detail">Powered by TestLab</span>
-					</div>
-					<button type="button" class="main-acc__more main-acc__more--small">
-						<span class="blind">More Action</span>
-					</button>
-					<div class="tooltip tooltip--sub-acc" style="display: none">
-
-						<button type="button" class="tooltip__btn-more">Copy account number</button>
-
-						<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
-					</div>
-					<div class="main-acc__circle">
-						<svg class="graph-bar" width="100%" height="100%" viewBox="0 0 42 42">
-							<circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="rgba(0,0,0,0.07)"
-								stroke-width="1.5"></circle>
-							<circle class="gauge" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff"
-								stroke-width="1.5" stroke-linecap="round" stroke-dashoffset="25"
-								style="stroke-dasharray: 24 76"></circle>
-						</svg>
-						<div class="main-acc__num">
-							<span class="percent">24</span>
-							<span class="unit">%</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="main-acc is-deepblue is-small">
-					<div class="main-acc__top">
-						<h2 class="main-acc__name">Need to repay</h2>
-						<span class="main-acc__amount">฿30,000.00</span>
-						<span class="main-acc__flag main-acc__flag--lock">Disbursement</span>
-						<span class="main-acc__flag">Overdue</span>
-					</div>
-					<div class="main-acc__bottom">
-						<span class="main-acc__detail">Credit Loan 568-2-81740-9</span>
-					</div>
-					<button type="button" class="main-acc__more main-acc__more--small">
-						<span class="blind">More Action</span>
-					</button>
-					<div class="tooltip tooltip--sub-acc" style="display: none">
-
-						<button type="button" class="tooltip__btn-more">Copy account number</button>
-
-						<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
-					</div>
-					<a href="#" class="main-acc__act main-acc__act--pay">
-						<span class="blind">Pay</span>
-					</a>
-				</div>
 				<a href="#" class="main-prod">
 					<span class="main-prod__cms-ico"><img src="https://dummyimage.com/54x54/999/fff" alt=""></span>
-					<strong class="main-prod__tit">Want some money?</strong>
-					<p class="main-prod__dsc">You can start apply 'Clare'</p>
+					<strong id="titleMessage" class="main-prod__tit">Mock Want some money?</strong>
+					<p id="descriptionMessage" class="main-prod__dsc">Mock You can start apply 'Clare'</p>
 				</a>
 
 				<div class="main-tb">
@@ -270,24 +183,229 @@
 		</main>
 	</div>
 
-	
-		<script>
-			window.onload = function() {
-				axios.get('http://127.0.0.1:8081/api/profile', { withCredentials: true })
-					.then(response => {
-						console.log('User is authenticated:', response.data.user_id);
-					})
-					.catch(error => {
-						if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-							window.location.href = 'pin.html';
-						} else {
-							console.error('Error verifying session:', error);
-						}
-					});
-			};
 
-			function logout() {
-				axios.post('http://127.0.0.1:8081/api/logout', {}, { withCredentials: true })
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			Swal.fire({
+				title: 'Loading...',
+				didOpen: () => {
+					Swal.showLoading();
+				},
+				allowOutsideClick: false,
+				allowEscapeKey: false,
+				allowEnterKey: false,
+			});
+
+			axios.get('http://127.0.0.1:8081/api/profile', { withCredentials: true })
+				.then(response => {
+					if (response.status === 200) {
+						console.log('User is authenticated:', response.data.user_id);
+
+						return axios.get('http://127.0.0.1:8081/api/main', { withCredentials: true });
+					} else {
+						window.location.href = 'pin.html';
+						throw new Error('Redirecting to pin page');
+					}
+				})
+				.then(mainResponse => {
+					console.log('Main API response:', mainResponse.data);
+
+					document.getElementById('main-content').style.display = 'block';
+					document.getElementById('greetingName').textContent = mainResponse.data.greeting_and_banner.greeting;
+
+					document.getElementById('titleMessage').textContent = mainResponse.data.greeting_and_banner.title;
+
+					document.getElementById('descriptionMessage').textContent = mainResponse.data.greeting_and_banner.description;
+					document.getElementById('descriptionMessage').textContent += ' ' + "'" + mainResponse.data.greeting_and_banner.name + "'";
+
+					renderDebitCards(mainResponse.data)
+					renderAccounts(mainResponse.data)
+				})
+				.catch(error => {
+					if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+						window.location.href = 'pin.html';
+					} else {
+						console.error('Error:', error);
+					}
+				})
+				.finally(() => {
+					Swal.close();
+				});
+		});
+
+		function renderDebitCards(data) {
+			const cards = data.debit_card_info;
+			console.log('List cards: ', cards)
+			const container = document.querySelector('.debit-swipe__lst');
+			if (!container || !Array.isArray(cards)) return;
+
+			container.innerHTML = ''; 
+
+			cards.forEach(card => {
+				console.log('Card data: ', card)
+				const a = document.createElement('a');
+				a.href = '#';
+				a.className = 'debit-swipe__item';
+
+				a.style.backgroundColor = card.color || '#ffffff';
+				if (card.border_color) {
+					a.style.setProperty('--border-color', card.border_color);
+				}
+
+				const masked = maskCreditCard(card.number)
+
+				a.innerHTML = `
+					<strong class="debit-swipe__name">${card.name}</strong>
+					<span class="debit-swipe__etc debit-swipe__etc--active">
+						<span class="debit-swipe__etc__num">${masked}</span>
+					</span>
+					<span class="debit-swipe__issue">${card.issuer ? `Issued by ${card.issuer}` : ''}</span>
+					`;
+
+				container.appendChild(a);
+			});
+		}
+
+		function renderAccounts(data) {
+			const mainAccountContainer = document.getElementById('main-account-container');
+			const otherAccountContainer = document.getElementById('other-accounts');
+			if (!otherAccountContainer) return;
+
+			otherAccountContainer.innerHTML = '';
+			mainAccountContainer.innerHTML = '';
+
+			data.account_info.forEach((account, index) => {
+				console.log('Account number: ', account.account_number)
+				if (account.is_main_account) {
+					renderMainAccount(account, mainAccountContainer);
+				} else {
+					renderOtherAccounts(account, index, otherAccountContainer)
+				}
+			});
+		}
+
+		function renderOtherAccounts(account, index, container) {
+			const wrapperId = `other-accounts-wrapper-${index + 1}`;
+			const div = document.createElement('div');
+			div.id = wrapperId;
+			div.className = 'main-acc is-bluegreen is-small';
+			div.style.borderColor = account.color;
+			div.style.backgroundColor = hexToTransparent(account.color, 0.08);
+
+			let flagsHtml = '';
+			if (Array.isArray(account.flag_value)) {
+				flagsHtml = account.flag_value.map(flag => {
+					let flagClass = '';
+
+					if (flag.toLowerCase() === 'disbursement') flagClass = 'main-acc__flag--lock';
+					return `<span class="main-acc__flag ${flagClass}">${flag}</span>`;
+				}).join('');
+			}
+
+			div.innerHTML = `
+				<div class="main-acc__top">
+				<h2 class="main-acc__name">${formatAccountType(account.type)}</h2>
+				<span class="main-acc__amount">${formatCurrency(account.amount, account.currency)}</span>
+				${flagsHtml}
+				</div>
+				<div class="main-acc__bottom">
+				<span class="main-acc__detail">Smart account ${account.account_number}</span>
+				<span class="main-acc__detail">Powered by TestLab</span>
+				</div>
+				<button type="button" class="main-acc__more main-acc__more--small">
+				<span class="blind">More Action</span>
+				</button>
+				<div class="tooltip tooltip--sub-acc">
+				<button type="button" class="tooltip__btn-more">Copy account number</button>
+				<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
+				</div>
+				<a href="#" class="main-acc__act main-acc__act--money">
+				<span class="blind">Add money</span>
+				</a>
+			`;
+
+			container.appendChild(div);
+		}
+
+		function hexToTransparent(hex, alpha = 0.08) {
+			const bigint = parseInt(hex.replace('#', ''), 16);
+			const r = (bigint >> 16) & 255;
+			const g = (bigint >> 8) & 255;
+			const b = bigint & 255;
+			return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+		}
+
+		function maskCreditCard(cardNumber) {
+			// ลบช่องว่างออกก่อน
+			const cleanNumber = cardNumber.replace(/\s+/g, '');
+
+			// เอาเฉพาะ 4 ตัวท้าย
+			const last4 = cleanNumber.slice(-4);
+
+			// คืนค่าที่ถูก mask เช่น **** **** **** 2379
+			return '**** **** **** ' + last4;
+		}
+
+
+		function renderMainAccount(account, container) {
+			const html = `
+				<div class="main-acc main-acc--large main-loading main-loading--order3" style="border-color: ${account.color};">
+				<div class="main-acc__top">
+					<h2 class="main-acc__name">${formatAccountType(account.type)}</h2>
+					<span class="main-acc__amount">${formatCurrency(account.amount, account.currency)}</span>
+					<span class="main-acc__detail main-acc__detail--num">Smart account ${account.account_number}</span>
+					<span class="main-acc__detail">Powered by TestLab</span>
+				</div>
+				<div class="main-acc__bottom">
+					<div class="main-acc__ani_box">
+					<div class="main-acc__ani__item">
+						<span class="main-acc__ani_img1"></span>
+						<span class="main-acc__ani_img2"></span>
+					</div>
+					<div class="main-acc__ani__item2">
+						<span class="main-acc__ani_img3"></span>
+					</div>
+					</div>
+					<div class="main-acc__link__box">
+					<div class="main-acc__link__item">
+						<a href="#" class="main-acc__link main-acc__link--withdrawal">Withdrawal</a>
+						<a href="#" class="main-acc__link main-acc__link--qr">QR scan</a>
+						<a href="#" class="main-acc__link main-acc__link--addmoney">Add money</a>
+					</div>
+					</div>
+				</div>
+				<button type="button" class="main-acc__more">
+					<span class="blind">More Action</span>
+				</button>
+				<div class="tooltip" style="display: none">
+					<button type="button" class="tooltip__btn-more">Set main account</button>
+					<button type="button" class="tooltip__btn-more">Copy account number</button>
+					<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
+				</div>
+				<div class="tooltip tooltip--bubble tooltip--right-under" style="display: none">
+					<span class="tooltip__txt">Change your main account for <br>Using transfer, Wallet more easliy</span>
+				</div>
+				</div>
+			`;
+			container.insertAdjacentHTML('beforeend', html);
+		}
+
+		function formatCurrency(amount, currency = 'THB') {
+			return amount.toLocaleString('th-TH', {
+				style: 'currency',
+				currency: currency,
+			});
+		}
+
+		function formatAccountType(typeStr) {
+			return typeStr
+				.split('-')
+				.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+				.join(' ');
+		}
+
+		function logout() {
+			axios.post('http://127.0.0.1:8081/api/logout', {}, { withCredentials: true })
 				.then(() => {
 					window.location.href = 'pin.html';
 				})
@@ -296,7 +414,8 @@
 
 					window.location.href = 'pin.html';
 				});
-			}
-		</script>
+		}
+	</script>
 </body>
+
 </html>
