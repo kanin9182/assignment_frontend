@@ -8,7 +8,10 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY html/ /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/
 
-# Expose port 80
+# Set correct permissions and ownership
+RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/html
+
+# Expose port 80 (Nginx default)
 EXPOSE 80
 
 # Start Nginx

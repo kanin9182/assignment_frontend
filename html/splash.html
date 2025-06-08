@@ -11,34 +11,34 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="splash">
-      <div class="loader"></div>
-    </div>
+<div class="wrap">
+  <div class="splash">
+    <div class="loader"></div>
   </div>
+</div>
 
-  <script>
-	document.addEventListener("DOMContentLoaded", function () {
-	  axios.get("http://127.0.0.1:8081/api/health", { timeout: 2500 })
-		.then(function (response) {
-		  if (response.status === 200) {
-			window.location.href = "pin.html";
-		  } else {
-			showErrorAndStop();
-		  }
-		})
-		.catch(function (error) {
-		  showErrorAndStop();
-		});
-  
-	  function showErrorAndStop() {
-		Swal.fire({
-		  icon: "error",
-		  title: "Connection Failed",
-		  text: "API server is not available. Please try again later."
-		});
-	  }
-	});
-  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    axios.get("http://127.0.0.1:8081/api/health", { timeout: 2500 })
+            .then(function (response) {
+              if (response.status === 200) {
+                window.location.href = "pin.html";
+              } else {
+                showErrorAndStop();
+              }
+            })
+            .catch(function (error) {
+              showErrorAndStop();
+            });
+
+    function showErrorAndStop() {
+      Swal.fire({
+        icon: "error",
+        title: "Connection Failed",
+        text: "API server is not available. Please try again later."
+      });
+    }
+  });
+</script>
 </body>
 </html>

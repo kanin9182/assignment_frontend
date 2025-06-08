@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport"
-		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+		  content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="../css/th-bank.css">
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,187 +19,187 @@
 </style>
 
 <body>
-	<div class="wrap">
+<div class="wrap">
 
-		<header class="header ">
-			<a href="#" class="header__lft header__menu"><span class="blind">Menu</span></a>
-			<button type="button" class="header__rgt header__cxl" onclick="logout()"><span
-					class="blind">Cancel</span></button>
-		</header>
+	<header class="header ">
+		<a href="#" class="header__lft header__menu"><span class="blind">Menu</span></a>
+		<button type="button" class="header__rgt header__cxl" onclick="logout()"><span
+				class="blind">Cancel</span></button>
+	</header>
 
-		<!-- container -->
-		<main id="main-content" class="container container--main">
-			<div class="content_wrap">
-				<div class="main-top">
-					<h1 id="greetingName" class="main-top__tit main-loading main-loading--order1">Have a nice day Clare
-					</h1>
+	<!-- container -->
+	<main id="main-content" class="container container--main">
+		<div class="content_wrap">
+			<div class="main-top">
+				<h1 id="greetingName" class="main-top__tit main-loading main-loading--order1">Have a nice day Clare
+				</h1>
+			</div>
+
+			<div id="main-account-container" class="main-acc main-acc--large main-loading main-loading--order3">
+				<div class="main-acc__top">
+					<h2 class="main-acc__name">Saving Account</h2>
+					<span class="main-acc__amount">฿62,000.00</span>
+					<span class="main-acc__detail main-acc__detail--num">Smart account 568-2-81740-9</span>
+					<span class="main-acc__detail">Powered by TestLab</span>
 				</div>
 
-				<div id="main-account-container" class="main-acc main-acc--large main-loading main-loading--order3">
-					<div class="main-acc__top">
-						<h2 class="main-acc__name">Saving Account</h2>
-						<span class="main-acc__amount">฿62,000.00</span>
-						<span class="main-acc__detail main-acc__detail--num">Smart account 568-2-81740-9</span>
-						<span class="main-acc__detail">Powered by TestLab</span>
-					</div>
-
-					<div class="main-acc__bottom">
-						<div class="main-acc__ani_box">
-							<div class="main-acc__ani__item">
-								<span class="main-acc__ani_img1"></span>
-								<span class="main-acc__ani_img2"></span>
-							</div>
-							<div class="main-acc__ani__item2">
-								<span class="main-acc__ani_img3"></span>
-							</div>
+				<div class="main-acc__bottom">
+					<div class="main-acc__ani_box">
+						<div class="main-acc__ani__item">
+							<span class="main-acc__ani_img1"></span>
+							<span class="main-acc__ani_img2"></span>
 						</div>
-						<div class="main-acc__link__box">
-							<div class="main-acc__link__item">
-								<a href="#" class="main-acc__link main-acc__link--withdrawal">Withdrawal</a>
-								<a href="#" class="main-acc__link main-acc__link--qr">QR scan</a>
-								<a href="#" class="main-acc__link main-acc__link--addmoney">Add money</a>
-							</div>
+						<div class="main-acc__ani__item2">
+							<span class="main-acc__ani_img3"></span>
 						</div>
 					</div>
-					<button type="button" class="main-acc__more">
-						<span class="blind">More Action</span>
-					</button>
-					<div class="tooltip " style="display: none">
-
-						<button type="button" class="tooltip__btn-more">Set main account</button>
-
-						<button type="button" class="tooltip__btn-more">Copy account number</button>
-
-						<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
+					<div class="main-acc__link__box">
+						<div class="main-acc__link__item">
+							<a href="#" class="main-acc__link main-acc__link--withdrawal">Withdrawal</a>
+							<a href="#" class="main-acc__link main-acc__link--qr">QR scan</a>
+							<a href="#" class="main-acc__link main-acc__link--addmoney">Add money</a>
+						</div>
 					</div>
-					<div class="tooltip tooltip--bubble tooltip--right-under" style="display: none">
+				</div>
+				<button type="button" class="main-acc__more">
+					<span class="blind">More Action</span>
+				</button>
+				<div class="tooltip " style="display: none">
+
+					<button type="button" class="tooltip__btn-more">Set main account</button>
+
+					<button type="button" class="tooltip__btn-more">Copy account number</button>
+
+					<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
+				</div>
+				<div class="tooltip tooltip--bubble tooltip--right-under" style="display: none">
 						<span class="tooltip__txt">Change your main account for <br>Using transfer, Wallet more
 							easliy</span>
-					</div>
-				</div>
-
-				<div class="rctly__wrap main-loading main-loading--order5">
-					<ul class="rctly__lst">
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">Emily</span>
-							</a>
-						</li>
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb is-bank"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">AbcdEfghiJKlmN</span>
-							</a>
-						</li>
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">Jone Kiersten</span>
-							</a>
-						</li>
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">Emily</span>
-							</a>
-						</li>
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">Emily</span>
-							</a>
-						</li>
-						<li class="rctly__item">
-							<a href="#" class="rctly__link">
-								<span class="rctly__thumb is-bank"><img src="https://dummyimage.com/54x54/999/fff"
-										alt=""></span>
-								<span class="rctly__name">MarkYu Gonzales</span>
-							</a>
-						</li>
-
-					</ul>
-				</div>
-				<a class="main-make main-loading main-loading--order6" style="display:none;">
-					<span class="main-make__img"><img src="../img/main/img-debitcard-make.png" alt=""></span>
-					<strong class="main-make__tit">Make your Debit Card</strong>
-					<p class="main-make__dsc">To enjoy 0.5% cash back from online perchase.</p>
-				</a>
-				<div id="debit-card-wrapper-id" class="debit-swipe__wrap main-loading main-loading--order6">
-					<div class="debit-swipe__inner">
-						<div class="debit-swipe__lst" style="width:1595px;">
-							<a href="#" class="debit-swipe__item" style="background-color:#00a1e2">
-								<strong class="debit-swipe__name">My Salary</strong>
-								<span class="debit-swipe__etc">In progress</span>
-								<span class="debit-swipe__issue">Mock Issued by TestLab</span>
-							</a>
-
-							<a href="#" class="debit-swipe__item debit-swipe__item--all">
-								See all
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div id="other-accounts" class="main-acc is-bluegreen is-small">
-					<div class="main-acc__top">
-						<h2 class="main-acc__name">Saving Account</h2>
-						<span class="main-acc__amount">฿8,837,999.00</span>
-						<span class="main-acc__flag main-acc__flag--lock">Disbursement</span>
-						<span class="main-acc__flag">Overdue</span>
-					</div>
-					<div class="main-acc__bottom">
-						<span class="main-acc__detail">Smart account 568-2-81740-9</span>
-						<span class="main-acc__detail">Powered by TestLab</span>
-					</div>
-					<button type="button" class="main-acc__more main-acc__more--small">
-						<span class="blind">More Action</span>
-					</button>
-					<div class="tooltip tooltip--sub-acc">
-						<button type="button" class="tooltip__btn-more">Copy account number</button>
-						<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
-					</div>
-					<a href="#" class="main-acc__act main-acc__act--money">
-						<span class="blind">Add money</span>
-					</a>
-				</div>
-
-
-				<a href="#" class="main-prod">
-					<span class="main-prod__cms-ico"><img src="https://dummyimage.com/54x54/999/fff" alt=""></span>
-					<strong id="titleMessage" class="main-prod__tit">Mock Want some money?</strong>
-					<p id="descriptionMessage" class="main-prod__dsc">Mock You can start apply 'Clare'</p>
-				</a>
-
-				<div class="main-tb">
-					<a href="#" class="link-to">Total Balance</a>
 				</div>
 			</div>
-		</main>
-	</div>
+
+			<div class="rctly__wrap main-loading main-loading--order5">
+				<ul class="rctly__lst">
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
+																alt=""></span>
+							<span class="rctly__name">Emily</span>
+						</a>
+					</li>
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb is-bank"><img src="https://dummyimage.com/54x54/999/fff"
+																		alt=""></span>
+							<span class="rctly__name">AbcdEfghiJKlmN</span>
+						</a>
+					</li>
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
+																alt=""></span>
+							<span class="rctly__name">Jone Kiersten</span>
+						</a>
+					</li>
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
+																alt=""></span>
+							<span class="rctly__name">Emily</span>
+						</a>
+					</li>
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb"><img src="https://dummyimage.com/54x54/999/fff"
+																alt=""></span>
+							<span class="rctly__name">Emily</span>
+						</a>
+					</li>
+					<li class="rctly__item">
+						<a href="#" class="rctly__link">
+								<span class="rctly__thumb is-bank"><img src="https://dummyimage.com/54x54/999/fff"
+																		alt=""></span>
+							<span class="rctly__name">MarkYu Gonzales</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+			<a class="main-make main-loading main-loading--order6" style="display:none;">
+				<span class="main-make__img"><img src="../img/main/img-debitcard-make.png" alt=""></span>
+				<strong class="main-make__tit">Make your Debit Card</strong>
+				<p class="main-make__dsc">To enjoy 0.5% cash back from online perchase.</p>
+			</a>
+			<div id="debit-card-wrapper-id" class="debit-swipe__wrap main-loading main-loading--order6">
+				<div class="debit-swipe__inner">
+					<div class="debit-swipe__lst" style="width:1595px;">
+						<a href="#" class="debit-swipe__item" style="background-color:#00a1e2">
+							<strong class="debit-swipe__name">My Salary</strong>
+							<span class="debit-swipe__etc">In progress</span>
+							<span class="debit-swipe__issue">Mock Issued by TestLab</span>
+						</a>
+
+						<a href="#" class="debit-swipe__item debit-swipe__item--all">
+							See all
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="other-accounts" class="main-acc is-bluegreen is-small">
+				<div class="main-acc__top">
+					<h2 class="main-acc__name">Saving Account</h2>
+					<span class="main-acc__amount">฿8,837,999.00</span>
+					<span class="main-acc__flag main-acc__flag--lock">Disbursement</span>
+					<span class="main-acc__flag">Overdue</span>
+				</div>
+				<div class="main-acc__bottom">
+					<span class="main-acc__detail">Smart account 568-2-81740-9</span>
+					<span class="main-acc__detail">Powered by TestLab</span>
+				</div>
+				<button type="button" class="main-acc__more main-acc__more--small">
+					<span class="blind">More Action</span>
+				</button>
+				<div class="tooltip tooltip--sub-acc">
+					<button type="button" class="tooltip__btn-more">Copy account number</button>
+					<button type="button" class="tooltip__btn-more">Edit Name and Color</button>
+				</div>
+				<a href="#" class="main-acc__act main-acc__act--money">
+					<span class="blind">Add money</span>
+				</a>
+			</div>
 
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			Swal.fire({
-				title: 'Loading...',
-				didOpen: () => {
-					Swal.showLoading();
-				},
-				allowOutsideClick: false,
-				allowEscapeKey: false,
-				allowEnterKey: false,
-			});
+			<a href="#" class="main-prod">
+				<span class="main-prod__cms-ico"><img src="https://dummyimage.com/54x54/999/fff" alt=""></span>
+				<strong id="titleMessage" class="main-prod__tit">Mock Want some money?</strong>
+				<p id="descriptionMessage" class="main-prod__dsc">Mock You can start apply 'Clare'</p>
+			</a>
 
-			axios.get('http://127.0.0.1:8081/api/profile', { withCredentials: true })
+			<div class="main-tb">
+				<a href="#" class="link-to">Total Balance</a>
+			</div>
+		</div>
+	</main>
+</div>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		Swal.fire({
+			title: 'Loading...',
+			didOpen: () => {
+				Swal.showLoading();
+			},
+			allowOutsideClick: false,
+			allowEscapeKey: false,
+			allowEnterKey: false,
+		});
+
+		axios.get('http://127.0.0.1:8081/api/profile', { withCredentials: true })
 				.then(response => {
 					if (response.status === 200) {
-						//console.log('User is authenticated:', response.data.user_id);
+						console.log('User is authenticated:', response.data.user_id);
 
 						return axios.get('http://127.0.0.1:8081/api/main', { withCredentials: true });
 					} else {
@@ -208,7 +208,7 @@
 					}
 				})
 				.then(mainResponse => {
-					//console.log('Main API response:', mainResponse.data);
+					console.log('Main API response:', mainResponse.data);
 
 					document.getElementById('main-content').style.display = 'block';
 					document.getElementById('greetingName').textContent = mainResponse.data.greeting_and_banner.greeting;
@@ -225,36 +225,36 @@
 					if (error.response && (error.response.status === 401 || error.response.status === 403)) {
 						window.location.href = 'pin.html';
 					} else {
-						//console.error('Error:', error);
+						console.error('Error:', error);
 					}
 				})
 				.finally(() => {
 					Swal.close();
 				});
-		});
+	});
 
-		function renderDebitCards(data) {
-			const cards = data.debit_card_info;
-			//console.log('List cards: ', cards)
-			const container = document.querySelector('.debit-swipe__lst');
-			if (!container || !Array.isArray(cards)) return;
+	function renderDebitCards(data) {
+		const cards = data.debit_card_info;
+		console.log('List cards: ', cards)
+		const container = document.querySelector('.debit-swipe__lst');
+		if (!container || !Array.isArray(cards)) return;
 
-			container.innerHTML = ''; 
+		container.innerHTML = '';
 
-			cards.forEach(card => {
-				//console.log('Card data: ', card)
-				const a = document.createElement('a');
-				a.href = '#';
-				a.className = 'debit-swipe__item';
+		cards.forEach(card => {
+			console.log('Card data: ', card)
+			const a = document.createElement('a');
+			a.href = '#';
+			a.className = 'debit-swipe__item';
 
-				a.style.backgroundColor = card.color || '#ffffff';
-				if (card.border_color) {
-					a.style.setProperty('--border-color', card.border_color);
-				}
+			a.style.backgroundColor = card.color || '#ffffff';
+			if (card.border_color) {
+				a.style.setProperty('--border-color', card.border_color);
+			}
 
-				const masked = maskCreditCard(card.number)
+			const masked = maskCreditCard(card.number)
 
-				a.innerHTML = `
+			a.innerHTML = `
 					<strong class="debit-swipe__name">${card.name}</strong>
 					<span class="debit-swipe__etc debit-swipe__etc--active">
 						<span class="debit-swipe__etc__num">${masked}</span>
@@ -262,47 +262,47 @@
 					<span class="debit-swipe__issue">${card.issuer ? `Issued by ${card.issuer}` : ''}</span>
 					`;
 
-				container.appendChild(a);
-			});
-		}
+			container.appendChild(a);
+		});
+	}
 
-		function renderAccounts(data) {
-			const mainAccountContainer = document.getElementById('main-account-container');
-			const otherAccountContainer = document.getElementById('other-accounts');
-			if (!otherAccountContainer) return;
+	function renderAccounts(data) {
+		const mainAccountContainer = document.getElementById('main-account-container');
+		const otherAccountContainer = document.getElementById('other-accounts');
+		if (!otherAccountContainer) return;
 
-			otherAccountContainer.innerHTML = '';
-			mainAccountContainer.innerHTML = '';
+		otherAccountContainer.innerHTML = '';
+		mainAccountContainer.innerHTML = '';
 
-			data.account_info.forEach((account, index) => {
-				//console.log('Account number: ', account.account_number)
-				if (account.is_main_account) {
-					renderMainAccount(account, mainAccountContainer);
-				} else {
-					renderOtherAccounts(account, index, otherAccountContainer)
-				}
-			});
-		}
-
-		function renderOtherAccounts(account, index, container) {
-			const wrapperId = `other-accounts-wrapper-${index + 1}`;
-			const div = document.createElement('div');
-			div.id = wrapperId;
-			div.className = 'main-acc is-bluegreen is-small';
-			div.style.borderColor = account.color;
-			div.style.backgroundColor = hexToTransparent(account.color, 0.08);
-
-			let flagsHtml = '';
-			if (Array.isArray(account.flag_value)) {
-				flagsHtml = account.flag_value.map(flag => {
-					let flagClass = '';
-
-					if (flag.toLowerCase() === 'disbursement') flagClass = 'main-acc__flag--lock';
-					return `<span class="main-acc__flag ${flagClass}">${flag}</span>`;
-				}).join('');
+		data.account_info.forEach((account, index) => {
+			console.log('Account number: ', account.account_number)
+			if (account.is_main_account) {
+				renderMainAccount(account, mainAccountContainer);
+			} else {
+				renderOtherAccounts(account, index, otherAccountContainer)
 			}
+		});
+	}
 
-			div.innerHTML = `
+	function renderOtherAccounts(account, index, container) {
+		const wrapperId = `other-accounts-wrapper-${index + 1}`;
+		const div = document.createElement('div');
+		div.id = wrapperId;
+		div.className = 'main-acc is-bluegreen is-small';
+		div.style.borderColor = account.color;
+		div.style.backgroundColor = hexToTransparent(account.color, 0.08);
+
+		let flagsHtml = '';
+		if (Array.isArray(account.flag_value)) {
+			flagsHtml = account.flag_value.map(flag => {
+				let flagClass = '';
+
+				if (flag.toLowerCase() === 'disbursement') flagClass = 'main-acc__flag--lock';
+				return `<span class="main-acc__flag ${flagClass}">${flag}</span>`;
+			}).join('');
+		}
+
+		div.innerHTML = `
 				<div class="main-acc__top">
 				<h2 class="main-acc__name">${formatAccountType(account.type)}</h2>
 				<span class="main-acc__amount">${formatCurrency(account.amount, account.currency)}</span>
@@ -324,31 +324,31 @@
 				</a>
 			`;
 
-			container.appendChild(div);
-		}
+		container.appendChild(div);
+	}
 
-		function hexToTransparent(hex, alpha = 0.08) {
-			const bigint = parseInt(hex.replace('#', ''), 16);
-			const r = (bigint >> 16) & 255;
-			const g = (bigint >> 8) & 255;
-			const b = bigint & 255;
-			return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-		}
+	function hexToTransparent(hex, alpha = 0.08) {
+		const bigint = parseInt(hex.replace('#', ''), 16);
+		const r = (bigint >> 16) & 255;
+		const g = (bigint >> 8) & 255;
+		const b = bigint & 255;
+		return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+	}
 
-		function maskCreditCard(cardNumber) {
-			// ลบช่องว่างออกก่อน
-			const cleanNumber = cardNumber.replace(/\s+/g, '');
+	function maskCreditCard(cardNumber) {
+		// ลบช่องว่างออกก่อน
+		const cleanNumber = cardNumber.replace(/\s+/g, '');
 
-			// เอาเฉพาะ 4 ตัวท้าย
-			const last4 = cleanNumber.slice(-4);
+		// เอาเฉพาะ 4 ตัวท้าย
+		const last4 = cleanNumber.slice(-4);
 
-			// คืนค่าที่ถูก mask เช่น **** **** **** 2379
-			return '**** **** **** ' + last4;
-		}
+		// คืนค่าที่ถูก mask เช่น **** **** **** 2379
+		return '**** **** **** ' + last4;
+	}
 
 
-		function renderMainAccount(account, container) {
-			const html = `
+	function renderMainAccount(account, container) {
+		const html = `
 				<div class="main-acc main-acc--large main-loading main-loading--order3" style="border-color: ${account.color};">
 				<div class="main-acc__top">
 					<h2 class="main-acc__name">${formatAccountType(account.type)}</h2>
@@ -387,34 +387,35 @@
 				</div>
 				</div>
 			`;
-			container.insertAdjacentHTML('beforeend', html);
-		}
+		container.insertAdjacentHTML('beforeend', html);
+	}
 
-		function formatCurrency(amount, currency = 'THB') {
-			return amount.toLocaleString('th-TH', {
-				style: 'currency',
-				currency: currency,
-			});
-		}
+	function formatCurrency(amount, currency = 'THB') {
+		return amount.toLocaleString('th-TH', {
+			style: 'currency',
+			currency: currency,
+		});
+	}
 
-		function formatAccountType(typeStr) {
-			return typeStr
+	function formatAccountType(typeStr) {
+		return typeStr
 				.split('-')
 				.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 				.join(' ');
-		}
+	}
 
-		function logout() {
-			axios.post('http://127.0.0.1:8081/api/logout', {}, { withCredentials: true })
+	function logout() {
+		axios.post('http://127.0.0.1:8081/api/logout', {}, { withCredentials: true })
 				.then(() => {
 					window.location.href = 'pin.html';
 				})
 				.catch((error) => {
+					console.error('Logout failed:', error);
 
 					window.location.href = 'pin.html';
 				});
-		}
-	</script>
+	}
+</script>
 </body>
 
 </html>

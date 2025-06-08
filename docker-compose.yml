@@ -1,9 +1,8 @@
 version: '3.8'
 
 services:
-  frontend:
+  web:
     build: .
-    image: assignment-frontend
     ports:
-      - "8080:80"
-    container_name: assignment-frontend
+      - "3010:80"
+    restart: unless-stopped
