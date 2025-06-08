@@ -1,4 +1,4 @@
-# Nginx Static Website Docker Project (Assignment)
+# Demo Banking Dashboard with Nginx and Docker
 
 This project serves a static banking dashboard website using Nginx in a Docker container.
 
