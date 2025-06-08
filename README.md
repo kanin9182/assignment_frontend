@@ -28,7 +28,7 @@ This project serves a static banking dashboard website using Nginx in a Docker c
 
 ## Getting Started
 
-1. git clone <your-repo-url> cd <project-directory>
+1. git clone https://github.com/kanin9182/assignment_frontend.git
 2. docker-compose up --build
 3. **Access the website:**
     - [http://localhost:3010/](http://localhost:3010/)
