@@ -9,16 +9,7 @@ This project serves a static banking dashboard website using Nginx in a Docker c
 - Includes Docker Compose configuration
 
 ## Project Structure
-.
-├── Dockerfile
-├── docker-compose.yml
-├── html/
-│   ├── splash.html
-│   ├── pin.html
-│   └── bank_main.html
-├── css/
-│   └── styles.css
-└── README.md
+<pre lang="markdown"> ```plaintext . ├── Dockerfile ├── docker-compose.yml ├── html/ │ ├── splash.html │ ├── pin.html │ └── bank_main.html ├── css/ │ └── styles.css └── README.md ``` </pre>
 
 
 ## Prerequisites
